@@ -59,14 +59,19 @@
                 nameElem.innerText = firstName;
                 var lastNameElem = document.createElement('strong');
                 lastNameElem.innerText = lastName;
-                
-                liElem.appendChild(pElem);
-                liElem.appendChild(p2Elem);
+               
                 pElem.appendChild(nameElem);
                 p2Elem.appendChild(lastNameElem);
+               
+                liElem.appendChild(pElem);
+                liElem.appendChild(p2Elem);
 
-                return this;
-                //document.querySelector('ul').innerHTML += list;
+                ulElem.appendChild(liElem)
+
+                continerElem.appendChild(ulElem)
+
+            
+                document.body.innerHTML += continerElem.innerHTML;
 
 
             }
