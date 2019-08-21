@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>object Orented Design</title>
+</head>
+<body>
+    <h1>OBJECT ORENTED DESIGN</h1>
+    <!-- <output id="output"></output> --> 
+    <!-- <div class="container">
+        <ul>
+            <li> <p>Name: <strong>firstName</strong></p> </li>
+                   <li> <p>Last Name: <strong>lastName</strong></p> </li>
+        </ul>
+
+    </div> -->
+    
+    <script>
+
+        class nameBuilder{
+            constructor(firstName, lastName, age, eMailId){
+                //console.log("Hello World")
+                this.firstName = firstName;
+                this.lastName = lastName;
+                this.age = age;
+                this.eMailId = eMailId
+            }
+        }
+
+        class nameList{
+            constructor(){
+                this.nameList = [];
+            }
+            add(firstName, lastName, age, eMailId){
+                let name = new nameBuilder(firstName, lastName, age, eMailId)
+                this.nameList.push(name)
+                return this;
+            }
+            remove(index){
+                this.nameList.splice(index, 1);
+                return this;
+            }
+            generateOutPut(firstName, lastName){
+                var continerElem = document.createElement('div');
+                continerElem.setAttribute('class', 'container');
+
+                var ulElem = document.createElement('ul');
+                var liElem = document.createElement('li');
+                
+                var divElem = document.createElement('div');
+                divElem.setAttribute('class', 'details');
+
+                var pElem = document.createElement('p');
+                var p2Elem = document.createElement('p');
+
+                var nameElem = document.createElement('strong');
+                nameElem.innerText = firstName;
+                var lastNameElem = document.createElement('strong');
+                lastNameElem.innerText = lastName;
+                
+                liElem.appendChild(pElem);
+                liElem.appendChild(p2Elem);
+                pElem.appendChild(nameElem);
+                p2Elem.appendChild(lastNameElem);
+
+                return this;
+                //document.querySelector('ul').innerHTML += list;
+
+
+            }
+
+            
+        }
+
+        
+        let list = new nameList()
+        list.add("Jhon", "Doe", 30, "jhon@gmail.com") 
+            .add("Harry", "Doe", 31, "Harry@gmail.com") .add("Tyalor", "swift", 29, "tyalor@gmail.com")
+        
+
+
+        
+        // var person1 = new nameBuilder("Jhon", "Doe", 30, "jhon@gmail.com")
+        // var person2 = new nameBuilder("Harry", "Doe", 31, "Harry@gmail.com")
+        // var person3 = new nameBuilder("Tyalor", "swift", 29, "tyalor@gmail.com")
+
+
+        //console.log(person1, person2, person3)
+
+        // var personList = [];
+        // personList.push(person1, person2, person3)
+        
+        // console.log(personList)
+
+        
+//     function Person(name, eyeColor, age) {
+//     this.name = name;
+//     this.eyeColor = eyeColor;
+//     this.age = age;
+//     // this.updateAge = function(){
+//     //     return ++this.age;
+//     // };
+// }
+// Person()
+// var person01 = new Person("Manila", "Gurung", 32);
+// var person02 = new Person("Tyalor", "Swift", 30);
+// console.log(person01, person02)
+
+//console.log(person01.updateAge(), person02.updateAge())
+
+        //var test1 = new test()
+        
+
+    </script>
+    
+</body>
+</html>
