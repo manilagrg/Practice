@@ -50,6 +50,7 @@
             generateOutPut() {
                 var finalOutput = "";
                 //use for loop to generate the final output from the data
+
                 for (var i = 0; i < this.nameList.length; i++) {
                     var continerElem = document.createElement('div');
                     continerElem.setAttribute('class', 'container');
@@ -57,33 +58,37 @@
                     var ulElem = document.createElement('ul');
 
                     var liElem = document.createElement('li');
-                   
+                    var liElem2 = document.createElement('li');
 
                     var divElem = document.createElement('div');
                     divElem.setAttribute('class', 'details');
 
                     var pElem = document.createElement('p');
-                  
+                    var p2Elem = document.createElement('p');
+
                     var nameElem = document.createElement('strong');
                     
                     // console.log(this.nameList[i])
-                     nameElem.innerText = this.nameList[i].firstName + "  " +  this.nameList[i].lastName;
+                     nameElem.innerText = this.nameList[i].firstName;
                     
 
-                  
+                    var lastNameElem = document.createElement('strong');
+                    lastNameElem.innerText = this.nameList[i].lastName;
+
                     pElem.appendChild(nameElem);
-                   
+                    p2Elem.appendChild(lastNameElem);
+
                     liElem.appendChild(pElem);
-               
+                    liElem2.appendChild(p2Elem);
 
                     ulElem.appendChild(liElem)
-                    
+                    ulElem.appendChild(liElem2)
 
                     continerElem.appendChild(ulElem);
                     finalOutput += continerElem.innerHTML
 
                 }
-
+                
                 document.body.innerHTML += finalOutput;
 
             }
@@ -97,7 +102,6 @@
             }
 
         }
-
         let list = new NameList()
         list.add("Jhon", "Doe", 30, "jhon@gmail.com")
             .add("Harry", "Doe", 31, "Harry@gmail.com").add("Tyalor", "swift", 29, "tyalor@gmail.com")
@@ -105,7 +109,7 @@
         // var name = prompt("Add a name");
         // var lastName = prompt("Last Name")
         // list.add(name, lastName, 30, "jhon@gmail.com")
-        list.generateOutPut()
+        //list.generateOutPut()
 
         // var person1 = new nameBuilder("Jhon", "Doe", 30, "jhon@gmail.com")
         // var person2 = new nameBuilder("Harry", "Doe", 31, "Harry@gmail.com")
