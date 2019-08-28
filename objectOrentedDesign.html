@@ -18,7 +18,7 @@
             <label for="lastName">Last Name</label>
             <input type="text" name="lastName" id="lastName" value="">
 
-            <button type="button">Submit</button>
+            <button type="submit">Submit</button>
             
         </div>
     </form>
@@ -106,21 +106,28 @@
         //list.add("Jhon", "Doe", 30, "jhon@gmail.com")
             //.add("Harry", "Doe", 31, "Harry@gmail.com").add("Tyalor", "swift", 29, "tyalor@gmail.com")
 
-        //use prompt to 
+        //use prompt to add task or name
         // var name = prompt("Add a name");
         // var lastName = prompt("Last Name")
         // list.add(name, lastName, 30, "jhon@gmail.com")
         // list.generateOutPut()
 
         var form = document.querySelector('form')
-        form.addEventListener('click', function(e){
-            console.log(e)
-            
-           
-        })
+        var btn = document.querySelector('button')
 
-       
-        
+        // btn.addEventListener('click', function(e){
+        //     console.log(e)
+        //     var name = document.getElementById('Name')
+        //     var lastName1 = document.getElementById('lastName')
+        // })
+
+        form.addEventListener('submit', function(event){
+            event.preventDefault();
+            // console.log(event.srcElemen)
+            // var firstName = event.srcElement.item(0);
+            // var lastName = event.srcElement.item(1);
+            // console.log(firstName, lastName)
+        })
         // use new to call constructero name 
         // var person1 = new nameBuilder("Jhon", "Doe", 30, "jhon@gmail.com")
         // var person2 = new nameBuilder("Harry", "Doe", 31, "Harry@gmail.com")
