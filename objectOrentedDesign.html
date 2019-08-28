@@ -10,7 +10,7 @@
 
 <body>
     <h1>OBJECT ORENTED DESIGN</h1>
-    <form action="" method="post">
+    <form action="#">
         <div class="column">
             <label for="name">Name</label>
             <input type="text" name="name" id="name" value="">
@@ -19,6 +19,7 @@
             <input type="text" name="lastName" id="lastName" value="">
 
             <button type="button">Submit</button>
+            
         </div>
     </form>
     <script>
@@ -70,7 +71,6 @@
                     
                     // console.log(this.nameList[i])
                      nameElem.innerText = this.nameList[i].firstName;
-                    
 
                     var lastNameElem = document.createElement('strong');
                     lastNameElem.innerText = this.nameList[i].lastName;
@@ -103,26 +103,30 @@
 
         }
         let list = new NameList()
-        list.add("Jhon", "Doe", 30, "jhon@gmail.com")
-            .add("Harry", "Doe", 31, "Harry@gmail.com").add("Tyalor", "swift", 29, "tyalor@gmail.com")
+        //list.add("Jhon", "Doe", 30, "jhon@gmail.com")
+            //.add("Harry", "Doe", 31, "Harry@gmail.com").add("Tyalor", "swift", 29, "tyalor@gmail.com")
 
+        //use prompt to 
         // var name = prompt("Add a name");
         // var lastName = prompt("Last Name")
         // list.add(name, lastName, 30, "jhon@gmail.com")
-        //list.generateOutPut()
+        // list.generateOutPut()
 
+        var form = document.querySelector('form')
+        form.addEventListener('click', function(e){
+            console.log(e)
+            
+           
+        })
+
+       
+        
+        // use new to call constructero name 
         // var person1 = new nameBuilder("Jhon", "Doe", 30, "jhon@gmail.com")
         // var person2 = new nameBuilder("Harry", "Doe", 31, "Harry@gmail.com")
         // var person3 = new nameBuilder("Tyalor", "swift", 29, "tyalor@gmail.com")
 
-
         //console.log(person1, person2, person3)
-
-        // var personList = [];
-        // personList.push(person1, person2, person3)
-
-        // console.log(personList)
-
 
 //     function Person(name, eyeColor, age) {
 //     this.name = name;
